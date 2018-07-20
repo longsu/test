@@ -5,7 +5,15 @@
 /version2
   {
 
+	$inlude "publish-farm.any"
 	$ "author-farm.any"
+
+	line 1
+  }
+	line 2
+line3
+
 kk	
   
   }
+
