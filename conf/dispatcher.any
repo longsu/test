@@ -6,7 +6,6 @@
   {
 	line 1
 
-	$include "author-farm.any"
 
 	$include "publish-farm.any"
   }
