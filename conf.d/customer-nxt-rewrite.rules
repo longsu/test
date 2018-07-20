@@ -1,0 +1,24 @@
+###################################################
+# HPE NXT CUSTOMER REWRITERULE CONF
+# Modified Date: Nov 1, 2017
+# Modified Author: Broc Neagle bneagle@axis41.com
+# ###########################################
+# UPDATE LIST
+#
+# HPE NXT hidden folder  301 Redirects to Insights landing page
+RewriteRule ^/us/en/insights/articles(.html|/)?$ /us/en/insights.html [R=301,NC,NE,L]
+RewriteRule ^/us/en/insights/videos(.html|/)?$ /us/en/insights.html [R=301,NC,NE,L]
+RewriteRule ^/us/en/insights/reports(.html|/)?$ /us/en/insights.html [R=301,NC,NE,L]
+RewriteRule ^/us/en/insights/slideshares(.html|/)?$ /us/en/insights.html [R=301,NC,NE,L]
+RewriteRule ^/us/en/insights/infographics(.html|/)?$ /us/en/insights.html [R=301,NC,NE,L]
+RewriteRule ^/us/en/insights/tools(.html|/)?$ /us/en/insights.html [R=301,NC,NE,L]
+
+RewriteRule  ^/(.[^/]+)/(.[^/]+)/insights/content/hpe-nxt/en/(.[^/]+)/20([0-9]{2})/([0-9]{2})/(.+)(\..+) /$1/$2/insights/$3/$6-$4$5$7 [R=301,NC,NE,L]
+RewriteRule  ^/(.[^/]+)/(.[^/]+)/insights/(.[^/]+)/20([0-9]{2})/([0-9]{2})/(.+)(\..+)  /$1/$2/insights/$3/$6-$4$5$7 [R=301,NC,NE,L]
+
+
+
+# HPE NXT Date rewrite to actual year/month from short URL content
+RewriteCond   %{REQUEST_URI}                                     !^/content
+RewriteRule ^/(.[^/]+)/(.[^/]+)/insights/(.[^/]+)/(.+)-([0-9]{2})([0-9]{2})(\..+) /content/hpe/country/$1/$2/insights/$3/20$5/$6/$4$7 [PT,L]
+

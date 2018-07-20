@@ -1,0 +1,284 @@
+# ###################################################
+# HPE CUSTOMER REWRITERULE CONF
+# Modified Date: 05JUNE2018 22:30:00 CET
+# Modified Author: artur.pietruk@razorfish.com
+# ###################################################
+# UPDATE LIST
+# 29JAN2016 - Baseline in SCM
+# 24JUNE2016 - v1 - Added Ferengi to passthrough rules to allow staging dispatcher to serve site
+# 246SEPT2016 - v1 - Added plp-sitemap-index.xml to passthrough rules to allow this top level link at www.hpe.com/plp-sitemap-index.xml
+# 276SEPT2016 - v1 - Added pdp-sitemap-index.xml to passthrough rules to allow this top level link at www.hpe.com/plp-sitemap-index.xml
+#                    Added pattern for ^/(pdp-sitemap-[a-z]{2}-.+\.xml)$ to passthrough to allow links like www.hpe.com/pdp-sitemaps/pdp-sitemap-be-en.xml
+# 276SEPT2016 - v2 - correction to pdp-sitemap folder rule, was too restrictive, now allows country codes like emea_europe
+# 296SEPT2016 - v1 - correction to pdp-sitemap folder rule, added additional pdp-sitemaps folder path rather then just taking from captured string
+# 04OCT2016 - v1 - additional href sitemap rules
+# 05DEC2016 - v1 - correction to href sitemap files with just lang code - HPE-17924
+# 24JAN2017 - v1 - changed the mapping for href-index files for HPE-18487
+# 24OCT2017 - v1 - add NXT include
+# 05JUNE2018 - v1 - arturp: turned yandex rewrites to use regexp, to avoid updating rewrites when new yandex_XXX.html ID needs to be published
+
+# Default site page
+# https://www.hpe.com/ -> https://www.hpe.com/us/en/home.html
+RewriteRule ^/$ /us/en/home.html [R=301,L]
+
+# HPE NXT REDIRECT RULES
+Include /etc/httpd/conf.d/customer-nxt-rewrite.rules
+
+# Base redirect to get rid of AEM path
+# https://www.hpe.com/content/hpe/country/us/en/home.html -> https://www.hpe.com/us/en/home.html
+RewriteRule ^/content/hpe/country/(.*) /$1 [R=301,L,NC]
+
+# Default redirects for incomplete paths
+# https://www.hpe.com/content -> https://www.hpe.com/us/en/home.html
+# https://www.hpe.com/content/ -> https://www.hpe.com/us/en/home.html
+RewriteRule ^/content/?$ /us/en/home.html [R=301,L,NC]
+RewriteRule ^/content.html$ /us/en/home.html [R=301,L,NC]
+RewriteRule ^/content/hpe/?$ /us/en/home.html [R=301,L,NC]
+RewriteRule ^/content/hpe.html$ /us/en/home.html [R=301,L,NC]
+RewriteRule ^/content/hpe/country/?$ /us/en/home.html [R=301,L,NC]
+RewriteRule ^/content/hpe/country.html$ /us/en/home.html [R=301,L,NC]
+
+# Redirect locales that do not exist in AEM (usually from Tridion links)
+# https://www.hpe.com/al/en/services/financing-capacity.html -> https://www.hpe.com/emea_europe/en/services/financing-capacity.html
+# https://www.hpe.com/al/fr/services/financing-capacity.html -> https://www.hpe.com/emea_europe/en/services/financing-capacity.html
+RewriteRule ^/al/sq/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/am/hy/(.*) /emea_europe/en/$1 [R=301,L,NC]
+#RewriteRule ^/america_nsc_cnt_amer/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/ao/pt/(.*) /emea_africa/en/$1 [R=301,L,NC]
+RewriteRule ^/apj/en/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/ar/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/az/az/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/ba/bs/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/bd/bn/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/be/nl/(.*) /be/en/$1 [R=301,L,NC]
+RewriteRule ^/bg/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/bg/bg/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/bo/?$ /lamerica/es/home.html [R=301,L,NC]
+RewriteRule ^/bo/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/by/ru/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/cl/?$ /lamerica/es/home.html [R=301,L,NC]
+RewriteRule ^/cl/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/co/?$ /lamerica/es/home.html [R=301,L,NC]
+RewriteRule ^/co/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/cz/cs/(.*) /cz/en/$1 [R=301,L,NC]
+RewriteRule ^/dk/da/(.*) /dk/en/$1 [R=301,L,NC]
+RewriteRule ^/dz/fr/(.*) /emea_africa/fr/$1 [R=301,L,NC]
+RewriteRule ^/ec/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/ee/et/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/emea_middle_east/ar/(.*) /emea_middle_east/en/$1 [R=301,L,NC]
+RewriteRule ^/emea/de/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/emea/en/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/emea/fr/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/eu/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/fi/fi/(.*) /fi/en/$1 [R=301,L,NC]
+RewriteRule ^/ge/ge/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/gh/en/(.*) /emea_africa/en/$1 [R=301,L,NC]
+RewriteRule ^/gr/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/gr/el/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/hk/zh/(.*) /hk/en/$1 [R=301,L,NC]
+RewriteRule ^/hr/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/hr/hr/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/hu/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/hu/hu/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/id/?$ /asia_pac/en/home.html [R=301,L,NC]
+RewriteRule ^/id/en/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/il/he/(.*) /il/en/$1 [R=301,L,NC]
+RewriteRule ^/is/is/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/it/?$ /it/it/home.html [R=301,L,NC]
+RewriteRule ^/ke/en/(.*) /emea_africa/en/$1 [R=301,L,NC]
+RewriteRule ^/ks/sq/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/kz/ru/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/lamerica_nsc_carib/en/(.*) /lamerica/en/$1 [R=301,L,NC]
+RewriteRule ^/lamerica_nsc_cnt_amer/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/lar/en/(.*) /lamerica/en/$1 [R=301,L,NC]
+RewriteRule ^/lar/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/lk/si/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/lt/lt/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/lv/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/lv/lv/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/me/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/me/en/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/ma/fr/(.*) /emea_africa/fr/$1 [R=301,L,NC]
+RewriteRule ^/md/ro/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/mk/mk/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/mt/en/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/ng/en/(.*) /emea_africa/en/$1 [R=301,L,NC]
+RewriteRule ^/nl/nl/(.*) /nl/en/$1 [R=301,L,NC]
+RewriteRule ^/no/no/(.*) /no/en/$1 [R=301,L,NC]
+RewriteRule ^/pe/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/ph/?$ /asia_pac/en/home.html [R=301,L,NC]
+RewriteRule ^/ph/en/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/pk/en/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/pl/pl/(.*) /pl/en/$1 [R=301,L,NC]
+RewriteRule ^/pr/?$ /lamerica/es/home.html [R=301,L,NC]
+RewriteRule ^/pr/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/pt/pt/(.*) /pt/en/$1 [R=301,L,NC]
+RewriteRule ^/py/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/ro/ro/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/rs/sr/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/sa/ar/(.*) /emea_middle_east/en/$1 [R=301,L,NC]
+RewriteRule ^/sa/en/(.*) /emea_middle_east/en/$1 [R=301,L,NC]
+RewriteRule ^/se/sv/(.*) /se/en/$1 [R=301,L,NC]
+RewriteRule ^/si/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/si/sl/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/sk/?$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^/sk/sk/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/sl/sl/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/th/?$ /asia_pac/en/home.html [R=301,L,NC]
+RewriteRule ^/th/en/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/tm/ru/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/tr/tr/(.*) /tr/en/$1 [R=301,L,NC]
+RewriteRule ^/tw/zh/(.*) /tw/en/$1 [R=301,L,NC]
+RewriteRule ^/ua/ru/(.*) /emea_europe/en/$1 [R=301,L,NC]
+RewriteRule ^/uy/?$ /lamerica/en/home.html [R=301,L,NC]
+RewriteRule ^/uy/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/ve/es/(.*) /lamerica/es/$1 [R=301,L,NC]
+RewriteRule ^/vn/en/(.*) /asia_pac/en/$1 [R=301,L,NC]
+RewriteRule ^/vn/vi/(.*) /asia_pac/en/$1 [R=301,L,NC]
+
+# Default redirect paths for country site without language or incomplete path
+# "/us" or "/us/" or 
+# "/us/en" or "/us/en/" or "/us/[any two letter combo]/"
+# "/us/en.html" or "/us/[any two letter combo].html"
+# Note that in rules below - we will match 2 char a-z combo as well, not just valid languages
+# Also note that special cases like lamerica/es or ca/fr have specific rule before the more generic one
+# https://www.hpe.com/it -> https://www.hpe.com/it/it/home.html
+# https://www.hpe.com/it/ -> https://www.hpe.com/it/it/home.html
+# https://www.hpe.com/it/it -> https://www.hpe.com/it/it/home.html
+# https://www.hpe.com/it/zz -> https://www.hpe.com/it/it/home.html
+# https://www.hpe.com/it/it.html -> https://www.hpe.com/it/it/home.html
+# https://www.hpe.com/it/zz.html -> https://www.hpe.com/it/it/home.html
+RewriteRule ^(/br/?|/br/[a-z]{2}/?|/br/[a-z]{2}.html)$ /br/pt/home.html [R=301,L,NC]
+RewriteRule ^(/us/?|/us/[a-z]{2}/?|/us/[a-z]{2}.html)$ /us/en/home.html [R=301,L,NC]
+RewriteRule ^(/ca/fr/?|/ca/fr.html)$ /ca/fr/home.html [R=301,L,NC]
+RewriteRule ^(/ca/?|/ca/[a-z]{2}/?|/ca/[a-z]{2}.html)$ /ca/en/home.html [R=301,L,NC]
+RewriteRule ^(/mx/?|/mx/[a-z]{2}/?|/mx/[a-z]{2}.html)$ /mx/es/home.html [R=301,L,NC]
+RewriteRule ^(/de/?|/de/[a-z]{2}/?|/de/[a-z]{2}.html)$ /de/de/home.html [R=301,L,NC]
+RewriteRule ^(/jp/?|/jp/[a-z]{2}/?|/jp/[a-z]{2}.html)$ /jp/ja/home.html [R=301,L,NC]
+RewriteRule ^(/kr/?|/kr/[a-z]{2}/?|/kr/[a-z]{2}.html)$ /kr/ko/home.html [R=301,L,NC]
+RewriteRule ^(/uk/?|/uk/[a-z]{2}/?|/uk/[a-z]{2}.html)$ /uk/en/home.html [R=301,L,NC]
+RewriteRule ^(/in/?|/in/[a-z]{2}/?|/in/[a-z]{2}.html)$ /in/en/home.html [R=301,L,NC]
+RewriteRule ^(/sg/?|/sg/[a-z]{2}/?|/sg/[a-z]{2}.html)$ /sg/en/home.html [R=301,L,NC]
+RewriteRule ^(/hk/?|/hk/[a-z]{2}/?|/hk/[a-z]{2}.html)$ /hk/en/home.html [R=301,L,NC]
+RewriteRule ^(/au/?|/au/[a-z]{2}/?|/au/[a-z]{2}.html)$ /au/en/home.html [R=301,L,NC]
+RewriteRule ^(/my/?|/my/[a-z]{2}/?|/my/[a-z]{2}.html)$ /my/en/home.html [R=301,L,NC]
+RewriteRule ^(/nz/?|/nz/[a-z]{2}/?|/nz/[a-z]{2}.html)$ /nz/en/home.html [R=301,L,NC]
+RewriteRule ^(/tw/?|/tw/[a-z]{2}/?|/tw/[a-z]{2}.html)$ /tw/en/home.html [R=301,L,NC]
+RewriteRule ^(/cn/?|/cn/[a-z]{2}/?|/cn/[a-z]{2}.html)$ /cn/zh/home.html [R=301,L,NC]
+RewriteRule ^(/pl/?|/pl/[a-z]{2}/?|/pl/[a-z]{2}.html)$ /pl/en/home.html [R=301,L,NC]
+RewriteRule ^(/ie/?|/ie/[a-z]{2}/?|/ie/[a-z]{2}.html)$ /ie/en/home.html [R=301,L,NC]
+RewriteRule ^(/tr/?|/tr/[a-z]{2}/?|/tr/[a-z]{2}.html)$ /tr/en/home.html [R=301,L,NC]
+RewriteRule ^(/za/?|/za/[a-z]{2}/?|/za/[a-z]{2}.html)$ /za/en/home.html [R=301,L,NC]
+RewriteRule ^(/no/?|/no/[a-z]{2}/?|/no/[a-z]{2}.html)$ /no/en/home.html [R=301,L,NC]
+RewriteRule ^(/il/?|/il/[a-z]{2}/?|/il/[a-z]{2}.html)$ /il/en/home.html [R=301,L,NC]
+RewriteRule ^(/nl/?|/nl/[a-z]{2}/?|/nl/[a-z]{2}.html)$ /nl/en/home.html [R=301,L,NC]
+RewriteRule ^(/dk/?|/dk/[a-z]{2}/?|/dk/[a-z]{2}.html)$ /dk/en/home.html [R=301,L,NC]
+RewriteRule ^(/se/?|/se/[a-z]{2}/?|/se/[a-z]{2}.html)$ /se/en/home.html [R=301,L,NC]
+RewriteRule ^(/cz/?|/cz/[a-z]{2}/?|/cz/[a-z]{2}.html)$ /cz/en/home.html [R=301,L,NC]
+RewriteRule ^(/fi/?|/fi/[a-z]{2}/?|/fi/[a-z]{2}.html)$ /fi/en/home.html [R=301,L,NC]
+RewriteRule ^(/pt/?|/pt/[a-z]{2}/?|/pt/[a-z]{2}.html)$ /pt/en/home.html [R=301,L,NC]
+RewriteRule ^(/emea_europe/?|/emea_europe/[a-z]{2}/?|/emea_europe/[a-z]{2}.html)$ /emea_europe/en/home.html [R=301,L,NC]
+RewriteRule ^(/emea_africa/fr/?|/emea_africa/fr.html)$ /emea_africa/fr/home.html [R=301,L,NC]
+RewriteRule ^(/emea_africa/?|/emea_africa/[a-z]{2}/?|/emea_africa/[a-z]{2}.html)$ /emea_africa/en/home.html [R=301,L,NC]
+RewriteRule ^(/emea_middle_east/?|/emea_middle_east/[a-z]{2}/?|/emea_middle_east/[a-z]{2}.html)$ /emea_middle_east/en/home.html [R=301,L,NC]
+RewriteRule ^(/at/?|/at/[a-z]{2}/?|/at/[a-z]{2}.html)$ /at/de/home.html [R=301,L,NC]
+RewriteRule ^(/ch/fr/?|/ch/fr.html)$ /ch/fr/home.html [R=301,L,NC]
+RewriteRule ^(/ch/?|/ch/[a-z]{2}/?|/ch/[a-z]{2}.html)$ /ch/de/home.html [R=301,L,NC]
+RewriteRule ^(/fr/?|/fr/[a-z]{2}/?|/fr/[a-z]{2}.html)$ /fr/fr/home.html [R=301,L,NC]
+RewriteRule ^(/be/en/?|/be/en.html)$ /be/en/home.html [R=301,L,NC]
+RewriteRule ^(/be/?|/be/[a-z]{2}/?|/be/[a-z]{2}.html)$ /be/fr/home.html [R=301,L,NC]
+RewriteRule ^(/it/?|/it/[a-z]{2}/?|/it/[a-z]{2}.html)$ /it/it/home.html [R=301,L,NC]
+RewriteRule ^(/es/?|/es/[a-z]{2}/?|/es/[a-z]{2}.html)$ /es/es/home.html [R=301,L,NC]
+RewriteRule ^(/ru/?|/ru/[a-z]{2}/?|/ru/[a-z]{2}.html)$ /ru/ru/home.html [R=301,L,NC]
+RewriteRule ^(/lamerica/es/?|/lamerica/es.html)$ /lamerica/es/home.html [R=301,L,NC]
+RewriteRule ^(/lamerica/?|/lamerica/[a-z]{2}/?|/lamerica/[a-z]{2}.html)$ /lamerica/en/home.html [R=301,L,NC]
+RewriteRule ^(/asia_pac/?|/asia_pac/[a-z]{2}/?|/asia_pac/[a-z]{2}.html)$ /asia_pac/en/home.html [R=301,L,NC]
+
+# Enable rewrite to remove '/' and append html to folder URLs
+# NOT www.hpe.com/
+# ends with / -> .html
+# https://www.hpe.com/emea_europe/en/services/financing-capacity/ -> https://www.hpe.com/emea_europe/en/services/financing-capacity.html
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule ^(.*)/$ $1.html [R=301,L,NC]
+
+# Enable rewrite to add .html to extensionless URLs - ignore services
+# not .com .co .html .zzz
+# not start with /services/
+# SKIP https://www.hpe.com -> https://www.hpe.com
+# SKIP https://www.hpe.com/emea_europe/en/services/financing-capacity.html -> https://www.hpe.com/emea_europe/en/services/financing-capacity.html
+# SKIP https://www.hpe.com/services/hpe/xyz
+# https://www.hpe.com/emea_europe/en/services/financing-capacity -> https://www.hpe.com/emea_europe/en/services/financing-capacity.html
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,4}
+RewriteCond %{REQUEST_URI} !^(/services/)(.*)$
+RewriteRule ^(.*)$ $1.html [NC,R=301,L]
+
+# Allowed top level links
+# https://www.hpe.com/yandex_625483ce697a573b.html
+RewriteRule ^/yandex_([a-zA-Z0-9]+).html /content/hpe/country/yandex_$1.html [PT,L,NC]
+RewriteRule ^/robots.txt /content/hpe/country/robots.txt [PT,L,NC]
+RewriteRule ^/sitemap-index.xml /content/hpe/country/sitemap-index.xml [PT,L,NC]
+RewriteRule ^/fast-index.xml /content/hpe/country/fast-index.xml [PT,L,NC]
+RewriteRule ^/BingSiteAuth.xml /content/hpe/country/BingSiteAuth.xml [PT,L,NC]
+RewriteRule ^/google2f1da1ea148441ea.html /content/hpe/country/google2f1da1ea148441ea.html [PT,L,NC]
+RewriteRule ^/href-sitemap-index.xml /content/hpe/country/href-sitemaps/href-sitemap-index.xml [PT,L,NC]
+RewriteRule ^/baidu_verify_I80bbdLBrZ.html /content/hpe/country/baidu_verify_I80bbdLBrZ.html [PT,L,NC]
+RewriteRule ^/plp-sitemap-index.xml /content/hpe/country/plp-sitemap-index.xml [PT,L,NC]
+RewriteRule ^/pdp-sitemap-index.xml /content/hpe/country/pdp-sitemap-index.xml [PT,L,NC]
+# www.hpe.com/href-plp-sitemap-index.xml 
+# www.hpe.com/href-pdp-sitemap-index.xml 
+# www.hpe.com/href-plp-sitemaps/href-sitemap-plp-cc-ll.xml like 'www.hpe.com/href-plp-sitemaps/href-sitemap-plp-uk-en.xml'
+# www.hpe.com/href-pdp-sitemaps/href-sitemap-pdp-cc-ll.xml like 'www.hpe.com/href-pdp-sitemaps/href-sitemap-pdp-uk-en.xml'
+RewriteRule ^/href-plp-sitemap-index.xml /content/hpe/country/href-sitemaps-plp/href-sitemap-index.xml [PT,L,NC]
+RewriteRule ^/href-pdp-sitemap-index.xml /content/hpe/country/href-sitemaps-pdp/href-sitemap-index.xml [PT,L,NC]
+RewriteRule ^/(href-sitemap-plp-[^.]+\.xml)$ /content/hpe/country/href-sitemaps-plp/$1 [PT,L,NC]
+RewriteRule ^/(href-sitemap-pdp-[^.]+\.xml)$ /content/hpe/country/href-sitemaps-pdp/$1 [PT,L,NC]
+RewriteRule ^/(pdp-sitemaps/pdp-sitemap[^.]+.xml)$ /content/hpe/country/$1 [PT,L,NC]
+RewriteRule ^/(href-sitemap-[a-z]{2}(?:-.+)?\.xml)$ /content/hpe/country/href-sitemaps/$1 [PT,L,NC]
+
+# TEMPORARY SEO PASSTHROUGH AND REDIRECT RULES
+# Placed here to intercept links before generic country pass-throughs below
+Include /etc/httpd/conf.d/customer-seo-rules-temp.rules
+
+# Allowed paths for AEM country sites
+RewriteRule ^/br/([^/]+)/(.*) /content/hpe/country/br/$1/$2 [PT,L,NC]
+RewriteRule ^/us/([^/]+)/(.*) /content/hpe/country/us/$1/$2 [PT,L,NC]
+RewriteRule ^/ca/([^/]+)/(.*) /content/hpe/country/ca/$1/$2 [PT,L,NC]
+RewriteRule ^/ca/([^/]+)/(.*) /content/hpe/country/ca/$1/$2 [PT,L,NC]
+RewriteRule ^/mx/([^/]+)/(.*) /content/hpe/country/mx/$1/$2 [PT,L,NC]
+RewriteRule ^/de/([^/]+)/(.*) /content/hpe/country/de/$1/$2 [PT,L,NC]
+RewriteRule ^/jp/([^/]+)/(.*) /content/hpe/country/jp/$1/$2 [PT,L,NC]
+RewriteRule ^/kr/([^/]+)/(.*) /content/hpe/country/kr/$1/$2 [PT,L,NC]
+RewriteRule ^/uk/([^/]+)/(.*) /content/hpe/country/uk/$1/$2 [PT,L,NC]
+RewriteRule ^/in/([^/]+)/(.*) /content/hpe/country/in/$1/$2 [PT,L,NC]
+RewriteRule ^/sg/([^/]+)/(.*) /content/hpe/country/sg/$1/$2 [PT,L,NC]
+RewriteRule ^/hk/([^/]+)/(.*) /content/hpe/country/hk/$1/$2 [PT,L,NC]
+RewriteRule ^/au/([^/]+)/(.*) /content/hpe/country/au/$1/$2 [PT,L,NC]
+RewriteRule ^/my/([^/]+)/(.*) /content/hpe/country/my/$1/$2 [PT,L,NC]
+RewriteRule ^/nz/([^/]+)/(.*) /content/hpe/country/nz/$1/$2 [PT,L,NC]
+RewriteRule ^/tw/([^/]+)/(.*) /content/hpe/country/tw/$1/$2 [PT,L,NC]
+RewriteRule ^/cn/([^/]+)/(.*) /content/hpe/country/cn/$1/$2 [PT,L,NC]
+RewriteRule ^/pl/([^/]+)/(.*) /content/hpe/country/pl/$1/$2 [PT,L,NC]
+RewriteRule ^/ie/([^/]+)/(.*) /content/hpe/country/ie/$1/$2 [PT,L,NC]
+RewriteRule ^/tr/([^/]+)/(.*) /content/hpe/country/tr/$1/$2 [PT,L,NC]
+RewriteRule ^/za/([^/]+)/(.*) /content/hpe/country/za/$1/$2 [PT,L,NC]
+RewriteRule ^/no/([^/]+)/(.*) /content/hpe/country/no/$1/$2 [PT,L,NC]
+RewriteRule ^/il/([^/]+)/(.*) /content/hpe/country/il/$1/$2 [PT,L,NC]
+RewriteRule ^/nl/([^/]+)/(.*) /content/hpe/country/nl/$1/$2 [PT,L,NC]
+RewriteRule ^/dk/([^/]+)/(.*) /content/hpe/country/dk/$1/$2 [PT,L,NC]
+RewriteRule ^/se/([^/]+)/(.*) /content/hpe/country/se/$1/$2 [PT,L,NC]
+RewriteRule ^/cz/([^/]+)/(.*) /content/hpe/country/cz/$1/$2 [PT,L,NC]
+RewriteRule ^/fi/([^/]+)/(.*) /content/hpe/country/fi/$1/$2 [PT,L,NC]
+RewriteRule ^/pt/([^/]+)/(.*) /content/hpe/country/pt/$1/$2 [PT,L,NC]
+RewriteRule ^/emea_europe/([^/]+)/(.*) /content/hpe/country/emea_europe/$1/$2 [PT,L,NC]
+RewriteRule ^/emea_africa/([^/]+)/(.*) /content/hpe/country/emea_africa/$1/$2 [PT,L,NC]
+RewriteRule ^/emea_middle_east/([^/]+)/(.*) /content/hpe/country/emea_middle_east/$1/$2 [PT,L,NC]
+RewriteRule ^/at/([^/]+)/(.*) /content/hpe/country/at/$1/$2 [PT,L,NC]
+RewriteRule ^/ch/([^/]+)/(.*) /content/hpe/country/ch/$1/$2 [PT,L,NC]
+RewriteRule ^/fr/([^/]+)/(.*) /content/hpe/country/fr/$1/$2 [PT,L,NC]
+RewriteRule ^/be/([^/]+)/(.*) /content/hpe/country/be/$1/$2 [PT,L,NC]
+RewriteRule ^/it/([^/]+)/(.*) /content/hpe/country/it/$1/$2 [PT,L,NC]
+RewriteRule ^/es/([^/]+)/(.*) /content/hpe/country/es/$1/$2 [PT,L,NC]
+RewriteRule ^/ru/([^/]+)/(.*) /content/hpe/country/ru/$1/$2 [PT,L,NC]
+RewriteRule ^/lamerica/([^/]+)/(.*) /content/hpe/country/lamerica/$1/$2 [PT,L,NC]
+RewriteRule ^/ferengi/([^/]+)/(.*) /content/hpe/country/ferengi/$1/$2 [PT,L,NC]
+RewriteRule ^/asia_pac/([^/]+)/(.*) /content/hpe/country/asia_pac/$1/$2 [PT,L,NC]

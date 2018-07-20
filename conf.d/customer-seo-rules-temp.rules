@@ -1,0 +1,247 @@
+# ###################################################
+# HPE CUSTOMER SEO REWRITES CONF
+# Modified Date: 12JUL2017 14:10:00
+# Modified Author: john.kepler@razorfish.com
+# ###################################################
+# UPDATE LIST
+# 26OCT2015 - Baseline in SCM
+# 01MAR2016 - https://razorfish-west.atlassian.net/browse/HPE-11071
+# 24MAY2016 - https://razorfish-west.atlassian.net/browse/HPE-13681
+# 06JUNE2016 - v3 - https://razorfish-west.atlassian.net/browse/HPE-14266
+# 09JUNE2016 - v2 - https://razorfish-west.atlassian.net/browse/HPE-14266, https://razorfish-west.atlassian.net/browse/HPE-14362
+# 12AUG2016 - v1 - https://razorfish-west.atlassian.net/browse/HPE-15769
+# 19AUG2016 - v1 - https://razorfish-west.atlassian.net/browse/HPE-15645
+# 26OCT2016 - v1 - https://razorfish-west.atlassian.net/browse/HPE-17773
+# 29OCT2016 - v2 - https://razorfish-west.atlassian.net/browse/HPE-17940
+# 13MAR2017 - v1 - https://razorfish-west.atlassian.net/browse/HPE-20001
+# 30MAR2017 - v1 -  https://razorfish-west.atlassian.net/browse/HPE-20001
+# 12JUL2017 - v1 -  update server-management URL
+# ------------------------
+# START TEMPORARY SEO REWRITE RULES
+# ------------------------
+# rewrite bad links that may be in use by content reviewers
+RewriteRule ^/([^/]+)/([^/]+)/solutions/transform-to-a-hybrid-infrastructure.html /$1/$2/solutions/transform-hybrid.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/solutions/protect-your-digital-enterprise.html /$1/$2/solutions/protect-digital.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/solutions/empower-the-data-driven-organization.html /$1/$2/solutions/empower-data-driven.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/solutions/enable-workplace-productivity.html /$1/$2/solutions/enable-workplace.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage.html /$1/$2/services/consulting.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/it-infrastructure.html /$1/$2/services/consulting/it-infrastructure.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/big-data-services.html /$1/$2/services/consulting/big-data.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/security-risk-management.html /$1/$2/services/consulting/security.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/cloud-services.html /$1/$2/services/consulting/cloud.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/applications-services.html /$1/$2/services/consulting/applications.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/mobility-services.html /$1/$2/services/consulting/mobility-workplace.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/industry-specific.html /$1/$2/services/consulting/industry-specific.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/advise-transform-manage/business-process-services.html /$1/$2/services/consulting/business-process.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/it-support-services.html /$1/$2/services/it-support.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/financing-and-flexible-capacity.html /$1/$2/services/financing-capacity.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/education-and-training.html /$1/$2/services/it-education-training.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers.html /$1/$2/servers.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/rack-servers.html /$1/$2/servers/rack.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/density-optimized-servers-apollo.html /$1/$2/servers/density-optimized.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/density-optimized-servers-apollo/apollo.html /$1/$2/servers/apollo.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/density-optimized-servers-apollo/moonshot.html /$1/$2/servers/moonshot.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/mission-critical-servers.html /$1/$2/servers/mission-critical.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/mission-critical-servers/integrity-nonstop-systems.html /$1/$2/servers/nonstop.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/servers/non-stop.html /$1/$2/servers/nonstop.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/mission-critical-servers/superdome.html /$1/$2/servers/superdome.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/servers-for-cloud.html /$1/$2/servers/cloud.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-management.html /$1/$2/servers/management.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-management/tuning.html /$1/$2/servers/management/tuning.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/coffee-coaching.html /$1/$2/servers/coffee-coaching.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/rok.html /$1/$2/servers/rok.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/rok-more-information.html /$1/$2/servers/rok-more-information.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage.html /$1/$2/storage.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/flash-hybrid-storage.html /$1/$2/storage/flash-hybrid.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/flash-hybrid-storage/3par-storserv-storage-array-system.html /$1/$2/storage/3par.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/enterprise-tier-1-storage.html /$1/$2/storage/tier-1.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/enterprise-tier-1-storage/xp.html /$1/$2/storage/enterprise-xp.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/entry-level-storage.html /$1/$2/storage/entry-level.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/protection-retention-availability.html /$1/$2/storage/protection-retention.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/protection-retention-availability/store-once.html /$1/$2/storage/storeonce.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/software-defined-storage.html /$1/$2/storage/software-defined.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/software-defined-storage/storevirtual.html /$1/$2/storage/storevirtual.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/storage-networking.html /$1/$2/storage/networking.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/common-management-and-orchestration.html /$1/$2/storage/management-orchestration.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/product-portfolio.html /$1/$2/storage/product-portfolio.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking.html /$1/$2/networking.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/switches.html /$1/$2/networking/switches.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/routers.html /$1/$2/networking/routers.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/wireless-lan-networking.html /$1/$2/networking/wlan.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/campus-and-branch-networking.html /$1/$2/networking/campus-branch.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/datacenter-networking.html /$1/$2/networking/data-center.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/datacenter-networking/flexfabric.html /$1/$2/networking/flexfabric.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/datacenter-networking/white-label.html /$1/$2/networking/open-networking.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/wide-area-network-wan.html /$1/$2/networking/wan.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/software-defined-networking.html /$1/$2/networking/sdn.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/software-defined-networking/sdn-infrastructure.html /$1/$2/networking/infrastructure.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/software-defined-networking/network-virtualization-and-cloud-networking.html /$1/$2/networking/virtualization-cloud.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/software-defined-networking/sdn-apps.html /$1/$2/networking/applications.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/network-functions-virtualization.html /$1/$2/networking/nfv.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/networking/network-management.html /$1/$2/networking/management.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems.html /$1/$2/integrated-systems.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/converged-system.html /$1/$2/integrated-systems/converged.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/converged-system/for-cloud.html /$1/$2/integrated-systems/converged/cloud.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/converged-system/for-big-data.html /$1/$2/integrated-systems/converged/big-data.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/converged-system/for-client-virtualization.html /$1/$2/integrated-systems/converged/virtualization.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/hyper-converged-systems.html /$1/$2/integrated-systems/hyper-converged.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/bladesystem.html /$1/$2/integrated-systems/bladesystem.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/management-software.html /$1/$2/integrated-systems/software.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/rack-power-cooling-infrastructure.html /$1/$2/integrated-systems/rack-power-cooling.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/software.html /$1/$2/software.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/pods.html /$1/$2/integrated-systems/pods.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/synergy.html /$1/$2/integrated-systems/synergy.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/leadership-bios.html /$1/$2/leadership.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/privacy.html /$1/$2/legal/privacy.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/for-developers.html /$1/$2/developers.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/hpc-apollo-8000.html /$1/$2/servers/hpc-apollo-8000.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/hpc-apollo-6000.html /$1/$2/servers/hpc-apollo-6000.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/hpc-apollo-4000.html /$1/$2/servers/hpc-apollo-4000.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/hpc-apollo-2000.html /$1/$2/servers/hpc-apollo-2000.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/edgeline-iot-systems.html /$1/$2/servers/edgeline-iot-systems.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/global-innovation-lab.html /$1/$2/servers/global-innovation-lab.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/smart-choice.html /$1/$2/servers/smart-choice.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/density-optimized-servers-apollo.html /$1/$2/servers/density-optimized-servers-apollo.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/mission-critical-servers.html /$1/$2/servers/mission-critical-servers.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-management.html /$1/$2/servers/server-management.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/tower-servers.html /$1/$2/servers/tower-servers.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/edgeline-iot-systems.html /$1/$2/servers/edgeline-iot-systems.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/persistent-memory.html /$1/$2/servers/persistent-memory.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-partners.html /$1/$2/servers/server-partners.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-options.html /$1/$2/servers/server-options.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/memory.html /$1/$2/servers/memory.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/networking.html /$1/$2/servers/networking.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-partner-program.html /$1/$2/servers/server-partner-program.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/integrated-systems/virtual-connect.html /$1/$2/integrated-systems/virtual-connect.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/smart-choice/risc-migration.html /$1/$2/servers/smart-choice/risc-migration.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/smart-choice.html /$1/$2/servers/smart-choice.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/msa-shared-storage.html /$1/$2/storage/msa-shared-storage.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/3par-file-services.html /$1/$2/storage/3par-file-services.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/restful-api.html /$1/$2/servers/restful-api.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/integrated-lights-out-ilo.html /$1/$2/servers/integrated-lights-out-ilo.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-power-supplies.html /$1/$2/servers/server-power-supplies.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/server-storage.html /$1/$2/servers/server-storage.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/servers/tower-servers.html /$1/$2/servers/tower-servers.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/storeeasy-file-storage.html /$1/$2/storage/storeeasy-file-storage.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/storeever-tape-storage.html /$1/$2/storage/storeever-tape-storage.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/products/storage/storage-media.html /$1/$2/storage/storage-media.html [R=301,L,NC]
+# ------------------------
+# END TEMPORARY SEO REWRITE RULES
+# ------------------------
+# ------------------------
+# START CATALOG REDIRECTS
+# ------------------------
+# All Product catalog /emea_europe/en/product-catalog to uk/en
+RewriteRule ^/emea_europe/en/product-catalog/(.*) /uk/en/product-catalog/$1  [R=301,L,NC]
+# All Product catalog /lamerica/en/product-catalog to uk/en
+RewriteRule ^/lamerica/en/product-catalog/(.*) /us/en/product-catalog/$1  [R=301,L,NC]
+# All Product catalog /asia_pac/en/product-catalog to au/en
+RewriteRule ^/asia_pac/en/product-catalog/(.*) /au/en/product-catalog/$1  [R=301,L,NC]
+# Rename of storage/file-and-object-storage to storage/file-storage
+RewriteRule ^/([^/]+)/([^/]+)/product-catalog/storage/file-and-object-storage.html /$1/$2/product-catalog/storage/file-storage.html [R=301,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/product-catalog/storage/file-and-object-storage/(.*) /$1/$2/product-catalog/storage/$3 [R=301,L,NC]
+# ------------------------
+# END CATALOG REDIRECTS
+# ------------------------
+# ------------------------
+# START TEMPORARY SEO PASSTHROUGH RULES
+# Note that actual paths differ from requested paths in many rules. See next section for generic future-proof rules.
+# ------------------------
+# passthroughs to show seo urls instead of aem paths
+RewriteRule /([^/]+)/([^/]+)/solutions/transform-hybrid((?:\.[^/]+)?).html /content/hpe/country/$1/$2/solutions/transform-to-a-hybrid-infrastructure$3.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/solutions/protect-digital.html /content/hpe/country/$1/$2/solutions/protect-your-digital-enterprise.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/solutions/empower-data-driven.html /content/hpe/country/$1/$2/solutions/empower-the-data-driven-organization.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/solutions/enable-workplace.html /content/hpe/country/$1/$2/solutions/enable-workplace-productivity.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/solutions/cloud/private.html /content/hpe/country/$1/$2/solutions/cloud/private-cloud.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/solutions/cloud/manage-cloud.html /content/hpe/country/$1/$2/solutions/cloud/manage-multiple-clouds.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/solutions/cloud/applications.html /content/hpe/country/$1/$2/solutions/cloud/cloud-applications.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting.html /content/hpe/country/$1/$2/services/advise-transform-manage.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/it-infrastructure.html /content/hpe/country/$1/$2/services/advise-transform-manage/it-infrastructure.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/big-data.html /content/hpe/country/$1/$2/services/advise-transform-manage/big-data-services.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/security.html /content/hpe/country/$1/$2/services/advise-transform-manage/security-risk-management.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/cloud.html /content/hpe/country/$1/$2/services/advise-transform-manage/cloud-services.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/applications.html /content/hpe/country/$1/$2/services/advise-transform-manage/applications-services.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/mobility-workplace.html /content/hpe/country/$1/$2/services/advise-transform-manage/mobility-services.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/industry-specific.html /content/hpe/country/$1/$2/services/advise-transform-manage/industry-specific.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/consulting/business-process.html /content/hpe/country/$1/$2/services/advise-transform-manage/business-process-services.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/it-support.html /content/hpe/country/$1/$2/services/it-support-services.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/financing-capacity.html /content/hpe/country/$1/$2/services/financing-and-flexible-capacity.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/services/it-education-training.html /content/hpe/country/$1/$2/services/education-and-training.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/rack.html /content/hpe/country/$1/$2/products/servers/rack-servers.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/density-optimized.html /content/hpe/country/$1/$2/products/servers/density-optimized-servers-apollo.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/apollo.html /content/hpe/country/$1/$2/products/servers/density-optimized-servers-apollo/apollo.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/moonshot.html /content/hpe/country/$1/$2/products/servers/density-optimized-servers-apollo/moonshot.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/mission-critical.html /content/hpe/country/$1/$2/products/servers/mission-critical-servers.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/nonstop.html /content/hpe/country/$1/$2/products/servers/mission-critical-servers/integrity-nonstop-systems.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/superdome.html /content/hpe/country/$1/$2/products/servers/mission-critical-servers/superdome.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/cloud.html /content/hpe/country/$1/$2/products/servers/servers-for-cloud.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/management.html /content/hpe/country/$1/$2/products/servers/server-management.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/management/tuning.html /content/hpe/country/$1/$2/products/servers/server-management/tuning.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/smart-choice.html /content/hpe/country/$1/$2/products/servers/smart-choice.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/fast-forward.html /content/hpe/country/$1/$2/products/servers/fast-forward.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/hpc-apollo-2000.html /content/hpe/country/$1/$2/products/servers/hpc-apollo-2000.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/hpc-apollo-4000.html /content/hpe/country/$1/$2/products/servers/hpc-apollo-4000.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/hpc-apollo-6000.html /content/hpe/country/$1/$2/products/servers/hpc-apollo-6000.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/servers/hpc-apollo-8000.html /content/hpe/country/$1/$2/products/servers/hpc-apollo-8000.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/flash-hybrid.html /content/hpe/country/$1/$2/products/storage/flash-hybrid-storage.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/3par((?:\.[^/]+)?).html /content/hpe/country/$1/$2/products/storage/flash-hybrid-storage/3par-storserv-storage-array-system$3.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/tier-1.html /content/hpe/country/$1/$2/products/storage/enterprise-tier-1-storage.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/enterprise-xp.html /content/hpe/country/$1/$2/products/storage/enterprise-tier-1-storage/xp.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/entry-level.html /content/hpe/country/$1/$2/products/storage/entry-level-storage.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/protection-retention.html /content/hpe/country/$1/$2/products/storage/protection-retention-availability.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/storeonce.html /content/hpe/country/$1/$2/products/storage/protection-retention-availability/store-once.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/software-defined.html /content/hpe/country/$1/$2/products/storage/software-defined-storage.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/storevirtual.html /content/hpe/country/$1/$2/products/storage/software-defined-storage/storevirtual.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/networking.html /content/hpe/country/$1/$2/products/storage/storage-networking.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/storage/management-orchestration.html /content/hpe/country/$1/$2/products/storage/common-management-and-orchestration.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/wlan.html /content/hpe/country/$1/$2/products/networking/wireless-lan-networking.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/campus-branch.html /content/hpe/country/$1/$2/products/networking/campus-and-branch-networking.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/data-center.html /content/hpe/country/$1/$2/products/networking/datacenter-networking.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/flexfabric.html /content/hpe/country/$1/$2/products/networking/datacenter-networking/flexfabric.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/open-networking.html /content/hpe/country/$1/$2/products/networking/datacenter-networking/white-label.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/wan.html /content/hpe/country/$1/$2/products/networking/wide-area-network-wan.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/sdn.html /content/hpe/country/$1/$2/products/networking/software-defined-networking.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/infrastructure.html /content/hpe/country/$1/$2/products/networking/software-defined-networking/sdn-infrastructure.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/virtualization-cloud.html /content/hpe/country/$1/$2/products/networking/software-defined-networking/network-virtualization-and-cloud-networking.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/applications.html /content/hpe/country/$1/$2/products/networking/software-defined-networking/sdn-apps.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/nfv.html /content/hpe/country/$1/$2/products/networking/network-functions-virtualization.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/networking/management.html /content/hpe/country/$1/$2/products/networking/network-management.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/converged.html /content/hpe/country/$1/$2/products/integrated-systems/converged-system.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/converged/cloud.html /content/hpe/country/$1/$2/products/integrated-systems/converged-system/for-cloud.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/converged/big-data.html /content/hpe/country/$1/$2/products/integrated-systems/converged-system/for-big-data.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/converged/virtualization.html /content/hpe/country/$1/$2/products/integrated-systems/converged-system/for-client-virtualization.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/hyper-converged((?:\.[^/]+)?).html /content/hpe/country/$1/$2/products/integrated-systems/hyper-converged-systems$3.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/bladesystem((?:\.[^/]+)?).html /content/hpe/country/$1/$2/products/integrated-systems/bladesystem$3.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/software((?:\.[^/]+)?).html /content/hpe/country/$1/$2/products/integrated-systems/management-software$3.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/rack-power-cooling.html /content/hpe/country/$1/$2/products/integrated-systems/rack-power-cooling-infrastructure.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/pods.html /content/hpe/country/$1/$2/products/integrated-systems/pods.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/integrated-systems/synergy((?:\.[^/]+)?).html /content/hpe/country/$1/$2/products/integrated-systems/synergy$3.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/software.html /content/hpe/country/$1/$2/products/software.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/leadership.html /content/hpe/country/$1/$2/leadership-bios.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/legal/privacy.html /content/hpe/country/$1/$2/privacy.html [PT,L,NC]
+RewriteRule /([^/]+)/([^/]+)/developers.html /content/hpe/country/$1/$2/for-developers.html [PT,L,NC]
+# ------------------------
+# END TEMPORARY SEO PASSTHROUGH RULES
+# ------------------------
+# ------------------------
+# START GENERIC SEO PASSTHROUGH RULES
+# ------------------------
+# passthroughs to show seo urls instead of aem paths
+RewriteRule ^/([^/]+)/([^/]+)/solutions/(.+).html /content/hpe/country/$1/$2/solutions/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/services/([^\.]+).html /content/hpe/country/$1/$2/services/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/servers.html /content/hpe/country/$1/$2/products/servers.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/servers/(.+).html /content/hpe/country/$1/$2/products/servers/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/storage((?:\.[^/]+)?).html /content/hpe/country/$1/$2/products/storage$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/storage/([^\.]+).html /content/hpe/country/$1/$2/products/storage/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/networking.html /content/hpe/country/$1/$2/products/networking.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/networking/([^\.]+).html /content/hpe/country/$1/$2/products/networking/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/integrated-systems.html /content/hpe/country/$1/$2/products/integrated-systems.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/software/([^\.]+).html /content/hpe/country/$1/$2/products/software/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/integrated-systems/([^\.]+).html /content/hpe/country/$1/$2/products/integrated-systems/$3.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/software.html /content/hpe/country/$1/$2/products/software.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/leadership.html /content/hpe/country/$1/$2/leadership-bios.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/legal/privacy.html /content/hpe/country/$1/$2/privacy.html [PT,L,NC]
+RewriteRule ^/([^/]+)/([^/]+)/developers.html /content/hpe/country/$1/$2/for-developers.html [PT,L,NC]
+# ------------------------
+# END GENERIC SEO PASSTHROUGH RULES
+# ------------------------
