@@ -4,7 +4,7 @@
 # each farm configures a set of (load-balanced) renders
 /farms
   {
-	$include "author-farm.any"
+	$ "author-farm.any"
 
   }
 	line 2
