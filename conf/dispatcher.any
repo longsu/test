@@ -5,15 +5,8 @@
 /master
   {
 
-	$inlude "publish-farm.any"
+	$include "publish-farm.any"
 	$ "author-farm.any"
 
-	line 1
-  }
-	line 2
-line3
-
-kk	
-  
   }
 
