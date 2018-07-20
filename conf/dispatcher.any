@@ -7,5 +7,5 @@
 	line 1
 
 
-	$include "publish-farm.any"
+	$inlude "publish-farm.any"
   }
