@@ -4,8 +4,9 @@
 # each farm configures a set of (load-balanced) renders
 /farms
   {
+
+	$ "author-farm.any"
 	line 1
-
-
-	$include "publish-farm.any"
+  
   }
+	line 2
