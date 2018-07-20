@@ -2,18 +2,13 @@
 /name "internet-server"
 
 # each farm configures a set of (load-balanced) renders
-/master
+/version2
   {
 
 	$inlude "publish-farm.any"
 	$ "author-farm.any"
 
-	line 1
+	line 5
   }
-	line 2
-line3
-
-kk	
-  
-  }
+	line 6
 
