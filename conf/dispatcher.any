@@ -5,7 +5,7 @@
 /version2
   {
 
-	$inlude "publish-farm.any"
+	$include "publish-farm.any"
 	$ "author-farm.any"
 
 	line 5
